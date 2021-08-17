@@ -8,7 +8,7 @@ def process(path_file, instance):
     for item in instance.getAll():
         if (item['nome do arquivo'] == path_file):
             return None
-    
+
     exit_file = {
         "nome_do_arquivo": path_file,
         "qtd_linhas": len(content),
@@ -16,7 +16,7 @@ def process(path_file, instance):
     }
 
     instance.enqueue(exit_file)
-    return sys.stdout.write(exit_file)
+    return sys.stdout.write(f"{exit_file}\n")
 
 
 def remove(instance):
