@@ -14,10 +14,6 @@ class Queue:
             return self._data.pop(0)
 
     def search(self, index):
-        try:
-            if index == -1:
-                raise
-            return self._data[index]
-        except:
-            print('O erro IndexError foi lançado')
+        if index == -1:
             raise IndexError
+        return self._data[index]
