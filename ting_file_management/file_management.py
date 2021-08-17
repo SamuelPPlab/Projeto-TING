@@ -10,5 +10,7 @@ def txt_importer(path_file):
         return content.splitlines()
     except OSError:
         print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
+        return None
     except ValueError:
         print("Formato inválido", file=sys.stderr)
+        return None
