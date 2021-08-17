@@ -3,6 +3,9 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
+    for posicao in range(instance.size()):
+        if path_file == instance.search(posicao)["nome_do_arquivo"]:
+            return None
     arquivo = txt_importer(path_file)
     retorno = {
         "nome_do_arquivo": path_file,
