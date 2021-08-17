@@ -1,9 +1,11 @@
 class Queue:
+    FIRST_ELEMENT = 0
+
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self._data = []
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self._data)
 
     def enqueue(self, value):
         """Aqui irá sua implementação"""
