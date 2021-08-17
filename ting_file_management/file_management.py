@@ -8,6 +8,6 @@ def txt_importer(path_file):
         with open(path_file, 'r') as file:
             text = file.read().splitlines()
             return text
-    
+
     except FileNotFoundError:
         sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
