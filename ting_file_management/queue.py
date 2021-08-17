@@ -8,10 +8,17 @@ class Queue:
         return len(self._data)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self._data.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        if self._data:
+            return self._data.pop(self.FIRST_ELEMENT)
+        return None
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if index >= 0 and index < len(self._data):
+            return self._data[index]
+        else:
+            raise IndexError()
+
+# Refencia código da aula aovivo 38.2
