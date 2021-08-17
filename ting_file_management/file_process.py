@@ -6,7 +6,7 @@ from ting_file_management.file_management import txt_importer
 def process(path_file, instance):
     """Aqui irá sua implementação"""
     # file_name = path_file.split('/', 2)[1]
-    if instance.__len__() < 1:    
+    if instance.__len__() < 1:
         txt_file = txt_importer(path_file)
         to_write = {
             "nome_do_arquivo": path_file,
