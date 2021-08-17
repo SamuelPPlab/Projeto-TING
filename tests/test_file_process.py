@@ -6,6 +6,7 @@ def test_validar_funcao_process_com_sucesso(capsys):
     project = Queue()
     process("statics/arquivo_teste.txt", project)
     out, err = capsys.readouterr()
+    print('out', out)
     assert "'nome_do_arquivo': 'statics/arquivo_teste.txt'" in out
     assert "'qtd_linhas': 3" in out
     assert "'linhas_do_arquivo': ['Acima de tudo,'" in out

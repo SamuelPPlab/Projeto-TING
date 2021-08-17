@@ -14,7 +14,6 @@ def txt_importer(path_file):
                 file = txt_file.readlines()
                 for line in file:
                     txt_content.append(line.strip())
-                print(txt_content)
                 return txt_content
 
     except FileNotFoundError:
