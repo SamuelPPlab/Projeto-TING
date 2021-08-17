@@ -1,15 +1,18 @@
 def exists_word(word, instance):
+    return build_result_list(word, instance, "simple")
+
+
+def search_by_word(word, instance):
+    return build_result_list(word, instance, "complete")
+
+
+def build_result_list(word, instance, type):
     result_list = []
     for index in range(instance.size()):
         content_processed = instance.search(index)
-        occurrences = [
-            {"linha": line_number + 1}
-            for line_number, line in enumerate(
-                content_processed["linhas_do_arquivo"]
-            )
-            if word in line
-        ]
-
+        occurrences = get_occurrences_by_word(
+            word, content_processed["linhas_do_arquivo"], type
+        )
         if len(occurrences):
             result_list.append(
                 {
@@ -21,5 +24,18 @@ def exists_word(word, instance):
     return result_list
 
 
-def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+def get_occurrences_by_word(word, lines, type="simple"):
+    if type == "simple":
+        return [
+            {"linha": line_number + 1}
+            for line_number, line in enumerate(lines)
+            if word.upper() in line.upper()
+        ]
+    elif type == "complete":
+        return [
+            {"linha": line_number + 1, "conteudo": line}
+            for line_number, line in enumerate(lines)
+            if word.upper() in line.upper()
+        ]
+    else:
+        return None
