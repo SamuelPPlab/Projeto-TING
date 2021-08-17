@@ -17,7 +17,7 @@ def exists_word(word, instance):
                     "ocorrencias": ocurrences,
                 }
             )
-    return get_word      
+    return get_word
 
 
 def search_by_word(word, instance):
