@@ -3,20 +3,17 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    content = txt_importer(path_file)
-
-    for item in instance.getAll():
-        if (item['nome do arquivo'] == path_file):
-            return None
-
-    exit_file = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": len(content),
-        "Linhas_do_arquivo": content
-    }
-
-    instance.enqueue(exit_file)
-    return sys.stdout.write(f"{exit_file}\n")
+    if not instance.__len__():
+        text_content = txt_importer(path_file)
+        text_preprocessed = {
+            "nome_do_arquivo": path_file,
+            "qtd_linhas": len(text_content),
+            "linhas_do_arquivo": text_content,
+        }
+        sys.stdout.write(f"{text_preprocessed}\n")
+        instance.enqueue(text_preprocessed)
+    else:
+        pass
 
 
 def remove(instance):
