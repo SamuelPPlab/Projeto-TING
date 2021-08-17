@@ -1,5 +1,3 @@
-from ting_file_management.queue import Queue
-
 def exists_word(word, instance):
     list = []
     for index in range(len(instance)):
