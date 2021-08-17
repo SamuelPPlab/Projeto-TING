@@ -1,3 +1,4 @@
+import sys
 from ting_file_management.file_management import txt_importer
 
 
@@ -20,6 +21,6 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    if position < 0 and position >= len(instance.__len__()):
-        return print("Posição inválida")
+    if position < 0 or position >= instance.__len__():
+        return sys.stderr.write("Posição inválida")
     return print(txt_importer(instance.search(position)))
