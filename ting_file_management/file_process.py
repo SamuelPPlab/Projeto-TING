@@ -1,7 +1,7 @@
 import sys
 from ting_file_management.file_management import txt_importer
 
-# from ting_file_management.queue import Queue
+from ting_file_management.queue import Queue
 
 
 def process(path_file, instance):
@@ -33,7 +33,12 @@ def remove(instance):
 def file_metadata(instance, position):
     if position < 0 or position >= len(instance):
         return sys.stderr.write('Posição inválida\n')
-    """Aqui irá sua implementação"""
+
+    search = instance.search(position)
+    result = f"'nome_do_arquivo': '{search['nome_do_arquivo']}'\n"
+    result += f"'qtd_linhas': {search['qtd_linhas']}\n 'linhas_do_arquivo': {search['qtd_linhas']}"
+
+    return sys.stdout.write(result)
 
 
 # if __name__ == "__main__":
@@ -53,5 +58,5 @@ def file_metadata(instance, position):
 
 #     data = queue.__iter__()
 #     # print('\n', len(queue))
-#     remove(queue)
+#     print('\n\n\n', file_metadata(queue, 10))
 #     # print('\n', len(queue))
