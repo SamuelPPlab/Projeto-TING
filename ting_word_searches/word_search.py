@@ -26,7 +26,26 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    data = instance.__iter__()
+    ocorrencias = []
+    file_name = ''
+
+    for item in data:
+        file_name = item['nome_do_arquivo']
+        for row, key in zip(item['linhas_do_arquivo'], range(1, len(item)+1)):
+            if word.lower() in row.lower():
+                ocorrencias.append({"linha": key, "conteudo": row})
+
+    result = [
+        {
+            "palavra": word,
+            "arquivo": file_name,
+            "ocorrencias": ocorrencias
+        }
+    ]
+    if len(ocorrencias) == 0:
+        return []
+    return result
 
 
 # if __name__ == "__main__":
