@@ -1,4 +1,5 @@
 import sys
+import re
 
 
 def txt_importer(path_file):
@@ -43,7 +44,6 @@ class Queue:
             raise IndexError()
 
 
-
 def process(path_file, instance):
     for index in range(len(instance)):
         if path_file == instance.search(index)["nome_do_arquivo"]:
@@ -63,6 +63,7 @@ def exists_word(word, instance):
         data = instance.search(item)["linhas_do_arquivo"]
         retorno = find_word(word, data, instance, item)
     return retorno
+
 
 def find_word(word, data, instance, item):
     """Aqui irá sua implementação"""
@@ -109,8 +110,8 @@ def search_by_word(word, instance):
         return []
 
 
-
 project = Queue()
 # print(project)
 process("statics/nome_pedro.txt", project)
 print(exists_word("Pedro", project))
+print("teste", project)
