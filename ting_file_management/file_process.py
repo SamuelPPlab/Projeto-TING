@@ -11,7 +11,7 @@ def process(path_file, instance):
             -"nome_do_arquivo", "qtd_linhas" e "linhas_do_arquivo"
         - Saída via stdout(sys) para cada adição válida
     """
-
+    # Ref: Moisés Santana
     for index in range(len(instance)):
         if path_file == instance.search(index)["nome_do_arquivo"]:
             return None
@@ -27,7 +27,13 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) == 0:
+        print("Não há elementos")
+    else:
+        file_removed = instance.dequeue()
+        print(
+            f"Arquivo {file_removed['nome_do_arquivo']} removido com sucesso"
+        )
 
 
 def file_metadata(instance, position):
