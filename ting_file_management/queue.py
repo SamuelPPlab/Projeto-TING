@@ -17,3 +17,6 @@ class Queue:
         if index == -1:
             raise IndexError
         return self._data[index]
+
+    def __iter__(self):
+        return self._data
