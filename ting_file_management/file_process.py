@@ -29,15 +29,10 @@ def remove(instance):
                 f'Arquivo {name_file} removido com sucesso\n')
     return sys.stdout.write("Não há elementos\n")
 
-    # if len(instance) == 0:
-    #     return sys.stdout('Não há elementos')
-
-    # if result:
-    #     sys.stdout(f'Arquivo {path_file} removido com sucesso')
-    #     return
-
 
 def file_metadata(instance, position):
+    if position < 0 or position >= len(instance):
+        return sys.stderr.write('Posição inválida\n')
     """Aqui irá sua implementação"""
 
 
