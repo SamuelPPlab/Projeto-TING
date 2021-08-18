@@ -69,8 +69,3 @@ def file_metadata(instance, position):
         return instance.search(position)
     except IndexError:
         return sys.stderr.write("Posição inválida")
-
-
-project = Queue()
-print(process("statics/arquivo_teste.txt", project))
-print(process("statics/arquivo_teste.txt", project))
