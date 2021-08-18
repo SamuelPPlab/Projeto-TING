@@ -1,8 +1,6 @@
 import sys
 from ting_file_management.file_management import txt_importer
 
-from ting_file_management.queue import Queue
-
 
 def process(path_file, instance):
     file = txt_importer(path_file)
@@ -36,7 +34,8 @@ def file_metadata(instance, position):
 
     search = instance.search(position)
     result = f"'nome_do_arquivo': '{search['nome_do_arquivo']}'\n"
-    result += f"'qtd_linhas': {search['qtd_linhas']}\n 'linhas_do_arquivo': {search['qtd_linhas']}"
+    result += f"'qtd_linhas': {search['qtd_linhas']}\n"
+    result += "'linhas_do_arquivo': {search['qtd_linhas']}"
 
     return sys.stdout.write(result)
 
