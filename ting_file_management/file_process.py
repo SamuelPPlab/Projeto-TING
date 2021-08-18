@@ -9,9 +9,9 @@ def process(path_file, instance):
         if path_file == instance.search(item)["nome_do_arquivo"]:
             return None
     objeto = {
-        "nome_do_arquivo": path_file,              # Nome do arquivo recém adicionado
-        "qtd_linhas": len(file),                   # Quantidade de linhas existentes no arquivo
-        "linhas_do_arquivo": file                  # linhas retornadas pela função do requisito 2
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(file),
+        "linhas_do_arquivo": file,
     }
 
     sys.stdout.write(f"{objeto}\n")
