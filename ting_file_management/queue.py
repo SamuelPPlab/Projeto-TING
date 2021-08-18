@@ -16,4 +16,3 @@ class Queue:
             return self.files[index]
         else:
             raise IndexError
-       
