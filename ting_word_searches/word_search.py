@@ -6,7 +6,9 @@ def exists_word(word, instance):
         matches = list()
         for line in item['linhas_do_arquivo']:
             if word.lower() in line.lower():
-                matches.append({'linha': item['linhas_do_arquivo'].index(line) + 1})
+                matches.append({
+                    'linha': item['linhas_do_arquivo'].index(line) + 1
+                    })
         if len(matches) > 0:
             result_list.append({
                 'palavra': word,
