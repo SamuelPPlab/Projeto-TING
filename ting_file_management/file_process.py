@@ -1,6 +1,7 @@
 import sys
 from ting_file_management.file_management import txt_importer
 
+
 def process(path_file, instance):
     file = txt_importer(path_file)
     qtd_lines = len(file)
