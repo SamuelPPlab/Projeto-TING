@@ -1,6 +1,5 @@
 import sys
 from ting_file_management.file_management import txt_importer
-# from ting_file_management.queue import Queue
 
 
 def process(path_file, instance):
@@ -36,9 +35,3 @@ def file_metadata(instance, position):
         _ = instance.search(position)
     except IndexError:
         return sys.stderr.write("Posição inválida")
-
-
-# new_queue = Queue()
-# process("statics/arquivo_teste.txt", new_queue)
-# process("statics/arquivo_teste.txt", new_queue)
-# print(len(new_queue))
