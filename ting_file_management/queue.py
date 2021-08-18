@@ -9,7 +9,10 @@ class Queue:
         self._data.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        return self._data.pop(0)
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if 0 <= index < len(self.data):
+            return self.data[index]
+        else:
+            raise IndexError
