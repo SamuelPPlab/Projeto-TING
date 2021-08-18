@@ -1,12 +1,12 @@
 import sys
 from ting_file_management.file_management import txt_importer
 
+
 def process(path_file, instance):
     for index in range(len(instance)):
         if instance.search(index)["nome_do_arquivo"] == path_file:
             return None
     file_text = txt_importer(path_file)
-    length = len(file_text)
     content = {
         "nome_do_arquivo": path_file,
         "qtd_linhas": len(file_text),
