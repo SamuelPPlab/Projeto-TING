@@ -1,7 +1,8 @@
 def exists_word(word, instance):
     """Aqui irá sua implementação"""
     result = list()
-    for file in instance.queue:
+    for index in range(instance.__len__()):
+        file = instance.search(index)
         find = False
         lines = list()
         for row in file['linhas_do_arquivo']:
