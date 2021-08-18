@@ -1,4 +1,8 @@
+# Referencia splitlines: https://www.w3schools.com/python/ref_string_splitlines.asp
+
+
 import sys
+
 
 def txt_importer(path_file):
     if ".txt" not in path_file:
