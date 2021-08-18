@@ -7,7 +7,9 @@ def exists_word(word, instance):
         for row in file['linhas_do_arquivo']:
             if word.lower() in row.lower():
                 find = True
-                lines.append({ 'linha': file['linhas_do_arquivo'].index(row) + 1 })
+                lines.append({
+                    'linha': file['linhas_do_arquivo'].index(row) + 1
+                })
 
         if find:
             result.append({
