@@ -1,6 +1,7 @@
 import sys
 from ting_file_management.file_management import txt_importer
-# from ting_file_management.queue import Queue
+
+from ting_file_management.queue import Queue
 
 
 def process(path_file, instance):
@@ -20,9 +21,11 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    result = instance.dequeue()
-    if result:
-        sys.stdout('Arquivo removido com sucesso')
+    if len(instance):
+        result = instance.dequeue()
+        if result:
+            return sys.stdout.write(f'Arquivo {result["nome_do_arquivo"]} removido com sucesso\n')
+    return sys.stdout.write("Não há elementos\n")
 
     # if len(instance) == 0:
     #     return sys.stdout('Não há elementos')
@@ -50,4 +53,8 @@ def file_metadata(instance, position):
 #     result = process(path, queue)
 #     result = process(path, queue)
 #     result = process(path, queue)
+
 #     data = queue.__iter__()
+#     # print('\n', len(queue))
+#     remove(queue)
+#     # print('\n', len(queue))
