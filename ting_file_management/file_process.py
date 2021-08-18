@@ -1,11 +1,9 @@
 import sys
 from ting_file_management.file_management import txt_importer
-# from ting_file_management.queue import Queue
+from ting_file_management.queue import Queue
 
 
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
-    # file_name = path_file.split('/', 2)[1]
     if instance.__len__() < 1:
         txt_file = txt_importer(path_file)
         to_write = {
@@ -13,16 +11,15 @@ def process(path_file, instance):
             "qtd_linhas": len(txt_file),
             "linhas_do_arquivo": txt_file
         }
-
         sys.stdout.write(str(to_write))
-        instance.enqueue(to_write)
+        return instance.enqueue(to_write)
 
 
 def remove(instance):
     """Aqui irá sua implementação"""
     if instance.__len__() > 0:
-        new_list = instance.pop()
-        sys.stdout(f"Arquivo {new_list} removido com sucesso")
+        new_lista = instance.dequeue()
+        print(f"Arquivo {new_lista['nome_do_arquivo']} removido com sucesso")
     else:
         print("Não há elementos")
 
