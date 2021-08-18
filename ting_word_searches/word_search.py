@@ -1,3 +1,13 @@
+def loop_lines(word, instance, occurrence, lines, byWord=False):
+    for i, line in enumerate(lines):
+        if byWord:
+            if word.upper() in line.upper():
+                occurrence.append({"linha": i + 1, "conteudo": line})
+        else:
+            if word in line:
+                occurrence.append({"linha": i + 1})
+
+
 def search_words_and_exists(word, instance, byWord=False):
     result = []
     for i in range(len(instance)):
@@ -11,15 +21,7 @@ def search_words_and_exists(word, instance, byWord=False):
         )
         lines = file_searched["linhas_do_arquivo"]
         occurrence = result[0]["ocorrencias"]
-
-    for i, line in enumerate(lines):
-        if byWord:
-            if word.upper() in line.upper():
-                occurrence.append({"linha": i + 1, "conteudo": line})
-        else:
-            if word in line:
-                occurrence.append({"linha": i + 1})
-
+    loop_lines(word, instance, occurrence, lines, byWord)
     if not len(occurrence):
         return []
     return result
