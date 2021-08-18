@@ -4,7 +4,7 @@ from ting_file_management.file_management import txt_importer
 
 def process(path_file, instance):
     """Aqui irá sua implementação"""
-    for index in range(len(instance)):
+    for index in range(instance.__len__()):
         if path_file == instance.search(index)["nome_do_arquivo"]:
             return None
 
@@ -16,7 +16,7 @@ def process(path_file, instance):
         "linhas_do_arquivo": file_in_arr
     })
 
-    print(instance.search(len(instance) - 1))
+    print(instance.search(instance.__len__() - 1))
 
 
 def remove(instance):
