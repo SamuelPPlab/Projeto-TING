@@ -9,7 +9,8 @@ class Queue:
 
     def enqueue(self, value):
         """Aqui irá sua implementação"""
-        self.data.append(value)
+        if value not in self.data:
+            self.data.append(value)
 
     def dequeue(self):
         """Aqui irá sua implementação"""
@@ -23,19 +24,17 @@ class Queue:
             if index > len(self.data) or index <= -1:
                 raise IndexError
             else:
-                # print(self.data[index])
                 return self.data[index]
         except IndexError:
             raise IndexError
 
 
-'''Testes manuais:
-run = Queue()
-run.enqueue(1)
-run.enqueue(2)
-run.enqueue(3)
-print(run.data)
-run.dequeue()
-print(run.data)
-run.search(0)
-'''
+# # Testes manuais:
+# run = Queue()
+# run.enqueue(1)
+# run.enqueue(2)
+# run.enqueue(3)
+# print(run.data)
+# run.dequeue()
+# print(run.data)
+# print(run.search(0))
