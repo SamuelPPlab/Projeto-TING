@@ -39,4 +39,3 @@ def file_metadata(instance, position):
         result = instance.search(position)
         return sys.stdout.write(str(result))
     sys.stderr.write("Posição inválida\n")
-
