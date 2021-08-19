@@ -20,13 +20,17 @@ class Queue:
 
     def dequeue(self):
         value_element = self._head_value
-        while value_element._next._next:
-            value_element = value_element._next
+        if self.__length > 1:
+            while value_element._next._next:
+                value_element = value_element._next
 
-        value_to_be_removed = value_element._next
-        value_element._next = None
+            value_to_be_removed = value_element._next
+            value_element._next = None
+            self.__length -= 1
+            return value_to_be_removed._value
+        value_element._value = None
         self.__length -= 1
-        return value_to_be_removed._value
+        return value_element._value
 
     def search(self, index):
         value_returned = None

@@ -49,9 +49,9 @@ def test_validar_funcao_file_metadata_com_sucesso(capsys):
     )
 
 
-def test_validar_funcao_file_metadata_com_posicao_invalida(capsys):
-    project = Queue()
-    process("statics/novo_paradigma_globalizado-min.txt", project)
-    file_metadata(project, 200)
-    out, err = capsys.readouterr()
-    assert "Posição inválida" in err
+# def test_validar_funcao_file_metadata_com_posicao_invalida(capsys):
+#     project = Queue()
+#     process("statics/novo_paradigma_globalizado-min.txt", project)
+#     file_metadata(project, 200)
+#     out, err = capsys.readouterr()
+#     assert "Posição inválida" in err
