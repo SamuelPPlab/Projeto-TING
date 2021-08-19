@@ -8,7 +8,7 @@ def exists_word(word, instance):
             "ocorrencias": [],
         }
 
-        for indexLine, line in range(len(fileInPosition["linhas_do_arquivo"])):
+        for indexLine, line in enumerate(fileInPosition["linhas_do_arquivo"]):
             if word.lower() in line.lower():
                 searchResult["ocorrencias"].append({"linha": indexLine + 1})
             if len(searchResult["ocorrencias"]) > 0:
@@ -26,7 +26,7 @@ def search_by_word(word, instance):
             "ocorrencias": [],
         }
 
-        for indexLine, line in range(len(fileInPosition["linhas_do_arquivo"])):
+        for indexLine, line in enumerate(fileInPosition["linhas_do_arquivo"]):
             if word.lower() in line.lower():
                 searchResult["ocorrencias"].append({"linha": indexLine + 1})
             if len(searchResult["ocorrencias"]) > 0:
