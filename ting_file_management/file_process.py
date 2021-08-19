@@ -36,8 +36,6 @@ def file_metadata(instance, position):
         return sys.stderr.write("Posição inválida")
 
 
-
-
 project2 = Queue()
 teste1 = process("statics/arquivo_teste.txt", project2)
 teste = file_metadata(project2, 0)
