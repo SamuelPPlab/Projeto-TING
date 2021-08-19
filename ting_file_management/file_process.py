@@ -13,10 +13,11 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    try:
-        removedItem = instance.dequeue()["nome_do_arquivo"]
+    if (len(instance) > 0):
+        removedItem = instance.search(0)["nome_do_arquivo"]
+        instance.dequeue()
         sys.stdout.write(f"Arquivo {removedItem} removido com sucesso\n")
-    except IndexError:
+    else:
         sys.stdout.write("Não há elementos\n")
 
 
