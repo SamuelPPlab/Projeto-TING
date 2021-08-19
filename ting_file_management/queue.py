@@ -15,3 +15,9 @@ class Queue:
         if not self.listItens[index] or index < 0:
             raise IndexError
         return self.listItens[index]
+
+    def itemNotExists(self, item):
+        if item not in self.listItens:
+            return True
+        else:
+            return False

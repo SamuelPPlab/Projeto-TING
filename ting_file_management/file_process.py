@@ -9,8 +9,11 @@ def process(path_file, instance):
         "qtd_linhas": len(textArray),
         "linhas_do_arquivo": textArray,
     }
-    instance.enqueue(resultObj)
-    sys.stdout.write(f"{resultObj}")
+    if instance.itemNotExists(resultObj):
+        instance.enqueue(resultObj)
+        sys.stdout.write(f"{resultObj}")
+    else:
+        return None
 
 
 def remove(instance):
