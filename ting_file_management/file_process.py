@@ -1,4 +1,5 @@
 from ting_file_management.file_management import txt_importer
+from ting_file_management.queue import Queue
 import sys
 
 
@@ -8,19 +9,37 @@ def process(path_file, instance):
     my_data["nome_do_arquivo"] = path_file
     my_data["qtd_linhas"] = data_len
     my_data["linhas_do_arquivo"] = txt_importer(path_file)
-    # https://stackoverflow.com/questions/4547274/convert-a-python-dict-to-a-string-and-back
-    to_str = str(my_data)
+    get_data = instance._data
+    if my_data not in get_data:
+        instance.enqueue(my_data)
     # https://www.geeksforgeeks.org/sys-stdout-write-in-python/
-    return sys.stdout.write(to_str)
+    return sys.stdout.write(f"{my_data}")
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    get_data = instance._data
+    length = instance.__len__()
+    if length == 0:
+        return sys.stdout.write("Não há elementos\n")
+    print(get_data)
+    remove_item = instance.dequeue()
+    print(get_data)
+    path_file = remove_item["nome_do_arquivo"]
+    return sys.stdout.write(f"Arquivo {path_file} removido com sucesso\n")
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        find_data = instance.search(position)
+        return sys.stdout.write(f"{find_data}")
+    except IndexError:
+        return sys.stderr.write("Posição inválida")
 
 
-# teste = process("statics/arquivo_teste.txt", "oi")
-# print(teste)
+
+
+project2 = Queue()
+teste1 = process("statics/arquivo_teste.txt", project2)
+teste = file_metadata(project2, 0)
+print(teste1)
+print("ola", teste)

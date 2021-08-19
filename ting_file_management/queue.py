@@ -1,4 +1,5 @@
 class Queue:
+    # auxílio exercicios dia 2 bloco 38
     FIRST_ELEMENT = 0
 
     def __init__(self):
