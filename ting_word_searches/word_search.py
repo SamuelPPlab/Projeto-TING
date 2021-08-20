@@ -17,6 +17,7 @@ def exists_word(word, instance):
                 result.append(occurrence)
     return result
 
+
 def search_by_word(word, instance):
     result = []
     occurrence = {
@@ -31,7 +32,9 @@ def search_by_word(word, instance):
 
         for index, line in enumerate(word_exist["linhas_do_arquivo"]):
             if word.lower() in line.lower():
-                occurrence["ocorrencias"].append({"conteudo": line ,"linha": index + 1})
+                occurrence["ocorrencias"].append(
+                    {"conteudo": line, "linha": index + 1}
+                )
             if len(occurrence["ocorrencias"]):
                 result.append(occurrence)
     return result
