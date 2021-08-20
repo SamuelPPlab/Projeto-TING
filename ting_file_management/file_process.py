@@ -10,7 +10,7 @@ def process(path_file, instance):
         "linhas_do_arquivo": txt_importer(path_file),
     }
 
-    if instance.existResult(objectRes) == True:
+    if instance.existResult(objectRes):
         return None
 
     instance.enqueue(objectRes)
