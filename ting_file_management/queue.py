@@ -23,3 +23,6 @@ class Queue:
             if not self.queue[index] or index < 0:
                 raise IndexError
             return self.queue[index]
+
+    def get(self):
+        return self.data
