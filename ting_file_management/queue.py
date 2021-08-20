@@ -2,6 +2,13 @@ class Queue:
     def __init__(self):
         self.result = []
 
+    def existResult(self, value):
+        for res in self.result:
+            if res == value:
+                return True
+            else:
+                return False
+
     def __len__(self):
         lengthResult = len(self.result)
         return lengthResult
