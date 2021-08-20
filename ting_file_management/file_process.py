@@ -30,10 +30,10 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    file = ''
+    file = ""
     for index in range(len(instance)):
-        if (position == instance.search(index)):
+        if position == instance.search(index):
             file = instance.search(index)
-        if (position not in instance.search(index)):
+        if position not in instance.search(index):
             return sys.stderr.write("Posição inválida")
     return file
