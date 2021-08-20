@@ -25,10 +25,15 @@ def remove(instance):
         print("Não há elementos")
     else:
         path_file = instance.search(0)["nome_do_arquivo"]
-        # print("PAAAAAAAAAAAAAAAAAAATH GSUSDOCEU", path_file)
         instance.dequeue()
         print(f"Arquivo {path_file} removido com sucesso")
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    file = ''
+    for index in range(len(instance)):
+        if (position == instance.search(index)):
+            file = instance.search(index)
+        if (position not in instance.search(index)):
+            return sys.stderr.write("Posição inválida")
+    return file
