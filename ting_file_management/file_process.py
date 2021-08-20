@@ -3,15 +3,21 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    file = txt_importer(path_file)
-    qtd_lines = len(file)
-    result = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": qtd_lines,
-        "linhas_do_arquivo": file,
+    nome_do_arquivo = path_file
+    qtd_linhas = len(txt_importer(path_file))
+    linhas_do_arquivo = txt_importer(path_file)
+    conteudo_do_processo = {
+        "nome_do_arquivo": nome_do_arquivo,
+        "qtd_linhas": qtd_linhas,
+        "linhas_do_arquivo": linhas_do_arquivo,
     }
-
-    sys.stdout.write(f"{result}")
+    if len(instance) > 0:
+        ultimo_arquivo = instance.search(len(instance) - 1)
+        if ultimo_arquivo["nome_do_arquivo"] != nome_do_arquivo:
+            instance.enqueue(conteudo_do_processo)
+    else:
+        instance.enqueue(conteudo_do_processo)
+    return sys.stdout.write(str(conteudo_do_processo))
 
 
 def remove(instance):
