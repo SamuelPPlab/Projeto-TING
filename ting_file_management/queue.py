@@ -45,4 +45,4 @@ if __name__ == "__main__":
         # return sys.stdout.write(f" Arquivo {name_file} removido com sucesso")
 
     process('arquivo_teste.txt', queue)
-    print(remove(queue));
+    print(remove(queue))
