@@ -22,4 +22,10 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        return instance.search(position)
+    except IndexError:
+        return sys.stderr.write('Posição inválida')
+
+# references
+# https://stackoverflow.com/questions/5574702/how-to-print-to-stderr-in-python
