@@ -5,12 +5,14 @@ import sys
 def txt_importer(path_file: str):
     """Aqui irá sua implementação"""
     if not os.path.isfile(path_file):
-        return sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
+        sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
+        return False
     with open(path_file, "r") as file:
         if not path_file.endswith(".txt"):
-            return sys.stderr.write("Formato inválido\n")
+            sys.stderr.write("Formato inválido\n")
+            return False
         data = file.read().splitlines()
         return data
 
 
-txt_importer("statics/arquivo_nao_existe.txt")
+# txt_importer("statics/arquivo_teste.txt")
