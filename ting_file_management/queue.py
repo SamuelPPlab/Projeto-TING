@@ -13,7 +13,6 @@ class Queue:
         """Aqui irá sua implementação"""
         self.__data.append(value)
 
-
     def dequeue(self):
         """Aqui irá sua implementação"""
         if self.__data:
@@ -26,5 +25,3 @@ class Queue:
             raise IndexError
         else:
             return self.__data[index]
-
-
