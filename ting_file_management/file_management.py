@@ -1,5 +1,6 @@
 import sys
 
+
 def txt_importer(path_file):
     if path_file[-4:] != '.txt':
         sys.stderr.write('Formato inválido\n')
