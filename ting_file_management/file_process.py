@@ -2,7 +2,17 @@ from ting_file_management.file_management import txt_importer
 import sys
 
 
+def search_by_file_name(data, path_file):
+    for name in data:
+        if(name['nome_do_arquivo'] == path_file):
+            return True
+        return False
+
+
 def process(path_file, instance):
+    data = instance.get_data()
+    if search_by_file_name(data, path_file):
+        return 1
     process_file = {}
     file = txt_importer(path_file)
     process_file['nome_do_arquivo'] = path_file

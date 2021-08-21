@@ -4,6 +4,9 @@ class Queue:
 
     def __len__(self):
         return len(self.data)
+    
+    def get_data(self):
+        return self.data
 
     def enqueue(self, value):
         self.data.append(value)
