@@ -17,3 +17,6 @@ class Queue:
             raise IndexError('Invalid index')
 
         return self.data[index]
+
+    def find_file(self, path):
+        return path in self.data
