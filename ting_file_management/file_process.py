@@ -9,6 +9,8 @@ def process(path_file, instance):
         if path_file == instance.search(index)["nome_do_arquivo"]:
             can_process = False
             break
+        index += 1
+
     if can_process:
         data_file = txt_importer(path_file)
 
