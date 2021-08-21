@@ -3,7 +3,7 @@ class Queue:
         self._queue = []
 
     def __len__(self):
-        return len(self._queue) 
+        return len(self._queue)
 
     def enqueue(self, value):
         self._queue.append(value)
