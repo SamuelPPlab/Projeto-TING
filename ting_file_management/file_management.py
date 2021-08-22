@@ -1,6 +1,7 @@
 import sys
 import os
 
+
 def txt_importer(path_file):
     if path_file.endswith('.txt'):
         if not os.path.isfile(path_file):
@@ -9,5 +10,3 @@ def txt_importer(path_file):
             return file.read().splitlines()
     else:
         return sys.stderr.write('Formato inválido\n')
-
-# txt_importer('C:/Users/lafde/sd-07-project-ting/statics/arquivo_teste.txt')
