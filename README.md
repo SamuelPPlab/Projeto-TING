@@ -11,7 +11,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-
 # Sumário
 
 - [Habilidades](#habilidades)
@@ -26,14 +25,15 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Desenvolvimento e testes](#desenvolvimento-e-testes)
 - [Requisitos do projeto](#requisitos-do-projeto)
 
-    `Requisitos obrigatórios:`
-    - [1 - Implemente uma fila para armazenar os arquivos que serão lidos](#1---implemente-uma-fila-para-armazenar-os-arquivos-que-serão-lidos)
-    - [2 - Implemente uma função `txt_importer` dentro do módulo `file_management` capaz de importar notícias a partir de um arquivo TXT, utilizando "\n" como separador. Todas as mensagens de erro devem ir para a `stderr`](#2---implemente-uma-função-txt_importer-dentro-do-módulo-file_management-capaz-de-importar-notícias-a-partir-de-um-arquivo-txt-utilizando-n-como-separador-todas-as-mensagens-de-erro-devem-ir-para-a-stderr)
-    - [3 - Implemente uma função `process` dentro do módulo `file_process` capaz de ler o arquivo carregado na função anterior e efetuar o preprocessamento do conteúdo](#3---implemente-uma-função-process-dentro-do-módulo-file_process-capaz-de-ler-o-arquivo-carregado-na-função-anterior-e-efetuar-o-preprocessamento-do-conteúdo)
-    - [4 - Implemente uma função `remove` dentro do módulo `file_process` capaz de remover o primeiro arquivo processado](#4---implemente-uma-função-remove-dentro-do-módulo-file_process-capaz-de-remover-o-primeiro-arquivo-processado)
-    - [5 - Implemente uma função `file_metadata` dentro do módulo `file_process` capaz de apresentar as informações superficiais dos arquivos processados](#5---implemente-uma-função-file_metadata-dentro-do-módulo-file_process-capaz-de-apresentar-as-informações-superficiais-dos-arquivos-processados)
-    - [6 - Implemente uma função `exists_word` dentro do módulo `word_search`, que valide a existência da palavra em todos os arquivos processados. Para cada palavra encontrada, deve-se listar sua linha conforme apresentação abaixo](#6---implemente-uma-função-exists_word-dentro-do-módulo-word_search-que-valide-a-existência-da-palavra-em-todos-os-arquivos-processados-para-cada-palavra-encontrada-deve-se-listar-sua-linha-conforme-apresentação-abaixo)
-    - [7 - Implemente uma função `search_by_word` dentro do módulo `word_search`, que busque a palavra em todos os arquivos processados. Para cada palavra encontrada, deve-se listar sua linha, o conteúdo e o arquivo da ocorrência](#7---implemente-uma-função-search_by_word-dentro-do-módulo-word_search-que-busque-a-palavra-em-todos-os-arquivos-processados-para-cada-palavra-encontrada-deve-se-listar-sua-linha-o-conteúdo-e-o-arquivo-da-ocorrência)
+  `Requisitos obrigatórios:`
+
+  - [1 - Implemente uma fila para armazenar os arquivos que serão lidos](#1---implemente-uma-fila-para-armazenar-os-arquivos-que-serão-lidos)
+  - [2 - Implemente uma função `txt_importer` dentro do módulo `file_management` capaz de importar notícias a partir de um arquivo TXT, utilizando "\n" como separador. Todas as mensagens de erro devem ir para a `stderr`](#2---implemente-uma-função-txt_importer-dentro-do-módulo-file_management-capaz-de-importar-notícias-a-partir-de-um-arquivo-txt-utilizando-n-como-separador-todas-as-mensagens-de-erro-devem-ir-para-a-stderr)
+  - [3 - Implemente uma função `process` dentro do módulo `file_process` capaz de ler o arquivo carregado na função anterior e efetuar o preprocessamento do conteúdo](#3---implemente-uma-função-process-dentro-do-módulo-file_process-capaz-de-ler-o-arquivo-carregado-na-função-anterior-e-efetuar-o-preprocessamento-do-conteúdo)
+  - [4 - Implemente uma função `remove` dentro do módulo `file_process` capaz de remover o primeiro arquivo processado](#4---implemente-uma-função-remove-dentro-do-módulo-file_process-capaz-de-remover-o-primeiro-arquivo-processado)
+  - [5 - Implemente uma função `file_metadata` dentro do módulo `file_process` capaz de apresentar as informações superficiais dos arquivos processados](#5---implemente-uma-função-file_metadata-dentro-do-módulo-file_process-capaz-de-apresentar-as-informações-superficiais-dos-arquivos-processados)
+  - [6 - Implemente uma função `exists_word` dentro do módulo `word_search`, que valide a existência da palavra em todos os arquivos processados. Para cada palavra encontrada, deve-se listar sua linha conforme apresentação abaixo](#6---implemente-uma-função-exists_word-dentro-do-módulo-word_search-que-valide-a-existência-da-palavra-em-todos-os-arquivos-processados-para-cada-palavra-encontrada-deve-se-listar-sua-linha-conforme-apresentação-abaixo)
+  - [7 - Implemente uma função `search_by_word` dentro do módulo `word_search`, que busque a palavra em todos os arquivos processados. Para cada palavra encontrada, deve-se listar sua linha, o conteúdo e o arquivo da ocorrência](#7---implemente-uma-função-search_by_word-dentro-do-módulo-word_search-que-busque-a-palavra-em-todos-os-arquivos-processados-para-cada-palavra-encontrada-deve-se-listar-sua-linha-o-conteúdo-e-o-arquivo-da-ocorrência)
 
 - [Depois de terminar o desenvolvimento](#depois-de-terminar-o-desenvolvimento)
 - [Revisando um pull request](#revisando-um-pull-request)
@@ -51,7 +51,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 - Manipular Listas duplamentes ligadas
 
---- 
+---
 
 ## Entregáveis
 
@@ -88,15 +88,15 @@ Este repositório já contém um _template_ com a estrutura de diretórios e arq
 ```md
 .
 ├── statics
-│   ├── arquivo_teste.txt
-│   ├── novo_paradigma_globalizado.txt
-│   └── novo_paradigma_globalizado-min.txt
+│ ├── arquivo_teste.txt
+│ ├── novo_paradigma_globalizado.txt
+│ └── novo_paradigma_globalizado-min.txt
 ├── tests
 ├── ting_file_management
-│   ├── file_management.py
-│   └── file_process.py
+│ ├── file_management.py
+│ └── file_process.py
 ├── ting_word_searches
-│   └── word_search.py
+│ └── word_search.py
 ├── README.md
 ├── requirements.txt
 └── setup.cfg
@@ -114,14 +114,14 @@ $ source .venv/bin/activate
 $ python3 -m pip install -r dev-requirements.txt
 ```
 
-O arquivo `requirements.txt` contém todos as dependências que serão utilizadas no projeto, ele está agindo como se fosse um `package.json` de um projeto `Node.js`. 
+O arquivo `requirements.txt` contém todos as dependências que serão utilizadas no projeto, ele está agindo como se fosse um `package.json` de um projeto `Node.js`.
 
 ---
 
 ## Data de Entrega
 
-  - Serão `2` dias de projeto.
-  - Data de entrega para avaliação final do projeto: `25/08/2021 - 14:00h`.
+- Serão `2` dias de projeto.
+- Data de entrega para avaliação final do projeto: `25/08/2021 - 14:00h`.
 
 ---
 
@@ -262,7 +262,7 @@ Acima de tudo,
 }
 ```
 
- - A função irá receber como parâmetro a fila que implementamos no requisito 1 e o caminho do arquivo.
+- A função irá receber como parâmetro a fila que implementamos no requisito 1 e o caminho do arquivo.
 
 - Por padrão deve-se ignorar arquivos com o mesmo nome;
 
@@ -280,7 +280,7 @@ Acima de tudo,
 
 #### 4 - Implemente uma função `remove` dentro do módulo `file_process` capaz de remover o primeiro arquivo processado
 
- - A função irá receber como parâmetro a fila que implementamos no requisito 1.
+- A função irá receber como parâmetro a fila que implementamos no requisito 1.
 
 - Por padrão deve-se ignorar a operação caso não hajam arquivos e emitir a mensagem `Não há elementos`;
 
@@ -298,7 +298,7 @@ Acima de tudo,
 
 - Em caso da posição não existir, deve ser exibida uma mensagem de erro: "`Posição inválida`" na `stderr`.
 
- - A função irá receber como parâmetro a fila que implementamos no requisito 1 e o índice a ser buscado.
+- A função irá receber como parâmetro a fila que implementamos no requisito 1 e o índice a ser buscado.
 
 **Exemplo de retorno**:
 
@@ -323,18 +323,20 @@ Acima de tudo,
 - A busca deve ser _case insensitive_ e deve retornar uma lista no formato:
 
 ```json
-[{
-  "palavra": "de",
-  "arquivo": "arquivo_teste.txt",
-  "ocorrencias": [
-    {
-      "linha": 1
-    },
-    {
-      "linha": 2
-    }
-  ]
-}]
+[
+  {
+    "palavra": "de",
+    "arquivo": "arquivo_teste.txt",
+    "ocorrencias": [
+      {
+        "linha": 1
+      },
+      {
+        "linha": 2
+      }
+    ]
+  }
+]
 ```
 
 - Caso a palavra não seja encontrada em nenhum arquivo, deve-se retornar uma lista vazia.
@@ -350,20 +352,22 @@ Acima de tudo,
 - A busca deve ser _case insensitive_ e deve retornar uma lista no formato:
 
 ```json
-[{
-  "palavra": "de",
-  "arquivo": "arquivo_teste.txt",
-  "ocorrencias": [
-    {
-      "linha": 1,
-      "conteudo": "Acima de tudo,"
-    },
-    {
-      "linha": 2,
-      "conteudo": "é fundamental ressaltar que a adoção de políticas descentralizadoras nos obriga"
-    }
-  ]
-}]
+[
+  {
+    "palavra": "de",
+    "arquivo": "arquivo_teste.txt",
+    "ocorrencias": [
+      {
+        "linha": 1,
+        "conteudo": "Acima de tudo,"
+      },
+      {
+        "linha": 2,
+        "conteudo": "é fundamental ressaltar que a adoção de políticas descentralizadoras nos obriga"
+      }
+    ]
+  }
+]
 ```
 
 - Caso a palavra não seja encontrada em nenhum arquivo, deve-se retornar uma lista vazia.
