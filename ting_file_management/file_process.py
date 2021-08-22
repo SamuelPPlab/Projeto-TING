@@ -28,10 +28,10 @@ def remove(instance):
         if not (instance.__len__()):
             raise ValueError()
         else:
-            #Referencia: Esdras
-            file = instance.dequeue()['nome_do_arquivo'] 
+            # Referencia: Esdras
+            file = instance.dequeue()['nome_do_arquivo']
             print(f"Arquivo {file} removido com sucesso\n", file=sys.stdout)
-            
+
     except ValueError:
         print('Não há elementos', file=sys.stdout)
 
