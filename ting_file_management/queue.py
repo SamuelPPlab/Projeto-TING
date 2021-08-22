@@ -6,7 +6,7 @@ class Queue:
         return len(self.values)
 
     def enqueue(self, value):
-        return self.values.append(value)
+        self.values.append(value)
 
     def dequeue(self):
         return self.values.pop(0)
@@ -15,3 +15,6 @@ class Queue:
         if (index >= len(self.values) or index < 0):
             raise IndexError
         return self.values[index]
+
+    def search_by_value(self, value):
+        return self.values.count(value)
