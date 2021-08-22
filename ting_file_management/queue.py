@@ -14,7 +14,6 @@ class Queue:
         return firs_item
 
     def search(self, index):
-        try:
-            return self.my_list[index]
-        except IndexError:
+        if index < 0 or not self.my_list[index]:
             raise IndexError
+        return self.my_list[index]
