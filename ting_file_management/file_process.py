@@ -3,8 +3,7 @@ import sys
 
 
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
-    arquivo = txt_importer(path_file)  # usando afunção que fiz no req.2
+    arquivo = txt_importer(path_file)  # usando a função que fiz no req.2
     conta_linhas = len(arquivo)  # cada linha é 1 item
     dict_retorno = {
         "nome_do_arquivo": path_file,
@@ -19,8 +18,12 @@ def process(path_file, instance):
 
 def remove(instance):
     """Aqui irá sua implementação"""
+    if len(instance) <= 0:
+        return sys.stdout.write("Não há elementos\n")
+
+    nome = instance.dequeue()["nome_do_arquivo"]
+    sys.stdout.write(f"Arquivo {nome} removido com sucesso\n")
 
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
-
