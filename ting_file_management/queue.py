@@ -9,7 +9,7 @@ class Queue:
         self._data.append(value)
 
     def dequeue(self):
-       return self._data.pop(0)
+        return self._data.pop(0)
 
     def search(self, index):
         if index not in range(len(self._data)):
