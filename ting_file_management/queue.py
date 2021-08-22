@@ -19,3 +19,6 @@ class Queue:
         if (index < 0 or self.__len__() == 0):
             raise IndexError
         return self._data[index]
+
+    def indexof(self, value):
+        return self._data.index(value)
