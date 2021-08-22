@@ -2,6 +2,7 @@ import sys
 
 
 def txt_importer(path_file):
+    print(path_file)
     if not path_file.endswith("txt"):
         sys.stderr.write("Formato inválido\n")
     try:
@@ -10,4 +11,6 @@ def txt_importer(path_file):
     except FileNotFoundError:
         sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
 
+
 # Vanessa Naara
+# https://stackoverflow.com/questions/172439/how-do-i-split-a-multi-line-string-into-multiple-lines
