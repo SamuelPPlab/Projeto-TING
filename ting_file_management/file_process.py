@@ -23,11 +23,11 @@ def remove(instance):
         return sys.stdout.write("Não há elementos\n")
 
     nome = instance.dequeue()["nome_do_arquivo"]
+    # referência: Vanessa Bidinotto
     sys.stdout.write(f"Arquivo {nome} removido com sucesso\n")
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
     try:
         return instance.search(position)
     except IndexError:
