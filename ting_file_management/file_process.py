@@ -3,8 +3,8 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
-    for row in range(0, instance.__len__()):
-        if instance.search(row)["nome_do_arquivo"] == path_file:
+    for element in range(0, instance.__len__()):
+        if instance.search(element)["nome_do_arquivo"] == path_file:
             return None
     imported = txt_importer(path_file)
     output = {
@@ -18,7 +18,6 @@ def process(path_file, instance):
         instance.enqueue(output)
     print(output)
     
-
 
 def remove(instance):
     if(instance.__len__() == 0):
