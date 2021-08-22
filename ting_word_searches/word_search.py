@@ -5,7 +5,7 @@ def sliding_window(string: str, window_size: int):
     window_limit = len(string) - window_size + 1
     for window_init in range(window_limit):
         window_end = window_init + window_size
-        yield deque(string[window_init:window_end])
+        yield deque(string[window_init:window_end].lower())
 
 
 def exists_word(word, instance):
@@ -22,7 +22,7 @@ def exists_word(word, instance):
         for line_index, line_word in enumerate(item["linhas_do_arquivo"], 1):
             occurrences = sliding_window(line_word, len(word))
 
-            if deque(word) in occurrences:
+            if deque(word.lower()) in occurrences:
                 result["ocorrencias"].append({"linha": line_index})
 
         if result["ocorrencias"]:
@@ -43,7 +43,7 @@ def search_by_word(word, instance):
 
         for line_index, line_word in enumerate(item["linhas_do_arquivo"], 1):
             occurrences = sliding_window(line_word, len(word))
-            if deque(word) in occurrences:
+            if deque(word.lower()) in occurrences:
                 occurrence = {
                     "linha": line_index,
                     "conteudo": line_word,
