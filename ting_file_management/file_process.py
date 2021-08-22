@@ -3,7 +3,8 @@ import sys
 
 
 def process(path_file, instance):
-    if len(instance) < 1:  # pra saber que ta iniciando a lista, referência: Vanessa Bidinotto
+    if len(instance) < 1:
+        # pra saber que ta iniciando a lista, referência: Vanessa Bidinotto
         arquivo = txt_importer(path_file)  # usando a função que fiz no req.2
         conta_linhas = len(arquivo)  # cada linha é 1 item
         dict_retorno = {
