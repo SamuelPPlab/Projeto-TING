@@ -17,7 +17,6 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
     if len(instance) <= 0:
         return sys.stdout.write("Não há elementos\n")
 
@@ -27,3 +26,7 @@ def remove(instance):
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+    try:
+        return instance.search(position)
+    except IndexError:
+        return sys.stderr.write("Posição inválida")
