@@ -19,8 +19,19 @@ def process(path_file: str, instance: Queue):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    try:
+        instance.dequeue()
+        message = "Arquivo statics/arquivo_teste.txt removido com sucesso"
+        print(message, file=sys.stdout)
+    except IndexError:
+        message = "Não há elementos"
+        print(message, file=sys.stdout)
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        file = instance.search(position)
+        print(file, file=sys.stdout)
+    except IndexError:
+        message = "Posição inválida"
+        print(message, file=sys.stderr)
