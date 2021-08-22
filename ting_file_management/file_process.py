@@ -20,11 +20,20 @@ def process(path_file, instance):
             sys.stdout.write(f"{content_file}\n")
             instance.enqueue(content_file)
     except ValueError:
-        print('Posição inválida', file=sys.stderr)
+        print('Posição inválida', file=sys.stdout)
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    try:
+        if not (instance.__len__()):
+            raise ValueError()
+        else:
+            #Referencia: Esdras
+            file = instance.dequeue()['nome_do_arquivo'] 
+            print(f"Arquivo {file} removido com sucesso\n", file=sys.stdout)
+            
+    except ValueError:
+        print('Não há elementos', file=sys.stdout)
 
 
 def file_metadata(instance, position):
