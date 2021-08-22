@@ -1,6 +1,6 @@
 class Queue:
     def __init__(self):
-        self._data = list()
+        self._data = []
 
     def __len__(self):
         return len(self._data)
