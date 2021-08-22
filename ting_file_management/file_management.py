@@ -1,5 +1,6 @@
 import sys
 
+
 def txt_importer(path_file):
     try:
         if not path_file.endswith('.txt'):
@@ -8,7 +9,5 @@ def txt_importer(path_file):
             return file.read().splitlines()
     except FileNotFoundError:
         print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
-        return None #referencia Rafa M G
     except ValueError:
-        print(f"Formato inválido", file=sys.stderr)
-        return None
+        print("Formato inválido", file=sys.stderr)
