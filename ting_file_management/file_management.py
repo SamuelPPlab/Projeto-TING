@@ -9,13 +9,11 @@ def readTxt(path_file):
 
 def txt_importer(path_file):
     try:
-        if path_file.endswith('.txt'):
-            if os.path.exists(path_file):
-                return readTxt(path_file)
-            else:
-                raise FileNotFoundError()
-        else:
+        if not path_file.endswith('.txt'):
             raise ValueError()
+        if not (os.path.exists(path_file)):
+            raise FileNotFoundError()
+        return readTxt(path_file)
     except FileNotFoundError:
         print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
     except ValueError:
