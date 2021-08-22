@@ -1,5 +1,17 @@
+import sys
+from ting_file_management.file_management import txt_importer
+
+
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    if path_file not in instance._queue:
+        instance.enqueue(path_file)
+
+    print(
+        f"'nome_do_arquivo': '{path_file}'\n",
+        f"'qtd_linhas': {len(txt_importer(path_file))}'\n",
+        f"'linhas_do_arquivo': {txt_importer(path_file)}'",
+        file=sys.stdout,
+        )
 
 
 def remove(instance):
