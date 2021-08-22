@@ -1,5 +1,5 @@
 import sys
-import os.path
+
 
 def txt_importer(path_file):
     try:
