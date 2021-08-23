@@ -12,6 +12,6 @@ class Queue:
         return self._data.pop(0)
 
     def search(self, index):
-        if index not in range(len(self._data)):
+        if index not in range(self._data.__len__()):
             raise IndexError
         return self._data[index]
