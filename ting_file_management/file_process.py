@@ -31,7 +31,6 @@ def remove(instance):
             # Referencia: Esdras
             file = instance.dequeue()['nome_do_arquivo']
             print(f"Arquivo {file} removido com sucesso\n", file=sys.stdout)
-
     except ValueError:
         print('Não há elementos', file=sys.stdout)
 
