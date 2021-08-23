@@ -1,5 +1,4 @@
 from ting_file_management.file_management import txt_importer
-from ting_file_management.queue import Queue
 import sys
 
 
@@ -36,8 +35,8 @@ def file_metadata(instance, position):
         return sys.stderr.write("Posição inválida")
 
 
-project2 = Queue()
-teste1 = process("statics/arquivo_teste.txt", project2)
-teste = file_metadata(project2, 0)
-print(teste1)
-print("ola", teste)
+# project2 = Queue()
+# teste1 = process("statics/arquivo_teste.txt", project2)
+# teste = file_metadata(project2, 0)
+# print(teste1)
+# print("ola", teste)
