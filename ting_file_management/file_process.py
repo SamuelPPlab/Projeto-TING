@@ -13,12 +13,12 @@ def process(path_file, instance):
     resp = {'nome_do_arquivo':  path_file, "qtd_linhas": len(data), "linhas_do_arquivo": data}
     sys.stdout.write(str(resp))
     instance.enqueue(resp)
-    
     # instance.enqueue()
     # return resp
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) == 0:
+        return sys.stdout.write("Não há elementos\n")
 
 
 def file_metadata(instance, position):
