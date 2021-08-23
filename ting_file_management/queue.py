@@ -25,5 +25,5 @@ class Queue:
 
         return self._data[index]
 
-# Referencia: arthur-massaini-project-ting (#63) e 
+# Referencia: arthur-massaini-project-ting (#63) e
 # https://www.geeksforgeeks.org/queue-in-python/
