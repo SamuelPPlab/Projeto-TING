@@ -9,7 +9,6 @@ def process(path_file, instance):
         process_dict["nome_do_arquivo"] = path_file
         process_dict["qtd_linhas"] = len(txt)
         process_dict["linhas_do_arquivo"] = txt
-        print(process_dict)
         instance.enqueue(process_dict)
 
 
