@@ -1,17 +1,22 @@
 import sys
 # import os
 from ting_file_management.file_management import txt_importer
-from ting_file_management.queue import Queue
+# from ting_file_management.queue import Queue
 # teste = Queue()
+
 
 def process(path_file, instance):
     # nome_arquivo = os.path.basename(path_file)
-    tot_linhas = 0
     data = txt_importer(path_file)
     if len(instance) < 1:
-        resp = {'nome_do_arquivo':  path_file, "qtd_linhas": len(data), "linhas_do_arquivo": data}
+        resp = {
+            'nome_do_arquivo':  path_file,
+            "qtd_linhas": len(data),
+            "linhas_do_arquivo": data
+        }
         sys.stdout.write(str(resp))
-        instance.enqueue(resp)    
+        instance.enqueue(resp)
+
 
 def remove(instance):
     if len(instance) == 0:
@@ -21,7 +26,7 @@ def remove(instance):
     return sys.stdout.write(
         f"Arquivo {file_removed} removido com sucesso\n"
     )
-    
+
 
 def file_metadata(instance, position):
     if position > len(instance):
