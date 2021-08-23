@@ -1,6 +1,7 @@
 from ting_file_management.file_management import txt_importer
 import sys
 
+
 def process(path_file, instance):
     file_lines = txt_importer(path_file)
 
@@ -18,14 +19,15 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    if not len(instance): return sys.stdout.write('Não há elementos\n')
-    
+    if not len(instance):
+        return sys.stdout.write('Não há elementos\n')
+
     removed_file = instance.dequeue()
     sys.stdout.write(f'Arquivo {removed_file} removido com sucesso\n')
 
 
 def file_metadata(instance, position):
     try:
-        file_path = instance.search(position)
+        instance.search(position)
     except IndexError:
         sys.stderr.write('Posição inválida\n')
