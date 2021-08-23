@@ -19,10 +19,11 @@ class Queue:
         try:
             retorno = self.lista[index]
         except IndexError:
-            raise IndexError('list index out of range')
+            raise IndexError("list index out of range")
         return retorno
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     q = Queue()
     q.enqueue(1)
     q.enqueue(2)
