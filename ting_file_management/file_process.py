@@ -12,6 +12,7 @@ def process(path_file, instance):
 
     print(file_process)
 
+
 def remove(instance):
     """Aqui irá sua implementação"""
 
