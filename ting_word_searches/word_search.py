@@ -2,7 +2,6 @@ def exists_word(word, instance):
     results = []
     for i in range(len(instance)):
         posicao = instance.search(i)
-        print("-----------------", posicao)
         resultadoDaBusca = {
             "palavra": word,
             "arquivo": posicao["nome_do_arquivo"],
