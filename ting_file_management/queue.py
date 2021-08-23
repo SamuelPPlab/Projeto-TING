@@ -4,14 +4,14 @@ import sys
 class Queue:
     def __init__(self):
         self.my_queue = []
-        self.names = set()
+        self.my_file_names = set()
 
     def __len__(self):
         return len(self.my_queue)
 
     def enqueue(self, value):
         self.my_queue.append(value)
-        self.names.add(value['nome_do_arquivo'])
+        self.my_file_names.add(value['nome_do_arquivo'])
 
     def dequeue(self):
         return self.my_queue.pop(0)
