@@ -38,8 +38,8 @@ def file_metadata(instance, position):
 
 # if __name__ == "__main__":
 #     lista = Queue()
-#     process('statics/arquivo_teste.txt', lista)
-#     print(process('statics/arquivo_teste.txt', lista))
+#     process("statics/nome_pedro.txt", lista)
+#     # print(process('statics/arquivo_teste.txt', lista))
 #     # remove(lista)
-#     file_metadata(lista, 2)
+#     # file_metadata(lista, 2)
 #     print(len(lista))
