@@ -6,6 +6,11 @@ class Queue:
         return len(self.__queue)
 
     def enqueue(self, value):
+        # source of ignore yet existent name
+        # https://github.com/tryber/sd-07-project-ting/
+        # commit/a63c2a96d1564a3e032b979f28b3a06a7c085294
+        if value in self.__queue:
+            return
         self.__queue.append(value)
 
     def dequeue(self):
