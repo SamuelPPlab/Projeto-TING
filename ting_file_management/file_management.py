@@ -16,4 +16,5 @@ def txt_importer(path_file):
     else:
         return resp
 
-print(txt_importer("../sttics/arquivo_teste.txt"))
+# print(txt_importer("../sttics/arquivo_teste.txt"))
+# print(txt_importer("../statics/arquivo_teste.txt"))
