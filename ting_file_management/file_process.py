@@ -8,13 +8,10 @@ def process(path_file, instance):
     # nome_arquivo = os.path.basename(path_file)
     tot_linhas = 0
     data = txt_importer(path_file)
-    # for index in range(len(data)):
-    #     tot_linhas += index
-    resp = {'nome_do_arquivo':  path_file, "qtd_linhas": len(data), "linhas_do_arquivo": data}
-    sys.stdout.write(str(resp))
-    instance.enqueue(resp)
-    # instance.enqueue()
-    # return resp
+    if len(instance) < 1:
+        resp = {'nome_do_arquivo':  path_file, "qtd_linhas": len(data), "linhas_do_arquivo": data}
+        sys.stdout.write(str(resp))
+        instance.enqueue(resp)    
 
 def remove(instance):
     if len(instance) == 0:
@@ -29,5 +26,6 @@ def remove(instance):
 def file_metadata(instance, position):
     if position > len(instance):
         return sys.stderr.write("Posição inválida\n")
+    return instance.search(position)
 
 # print(process("../statics/arquivo_teste.txt", teste))
