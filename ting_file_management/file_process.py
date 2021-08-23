@@ -27,6 +27,7 @@ def remove(instance):
     
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if position > len(instance):
+        return sys.stderr.write("Posição inválida\n")
 
 # print(process("../statics/arquivo_teste.txt", teste))
