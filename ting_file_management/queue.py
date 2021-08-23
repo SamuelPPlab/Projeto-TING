@@ -17,6 +17,7 @@ class Queue:
         to_remove = self.__queue[:1][0]
         self.__queue.remove(to_remove)
         return to_remove
+        raise IndexError
 
     def search(self, index):
         if (index >= 0):
