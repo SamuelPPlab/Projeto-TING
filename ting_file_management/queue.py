@@ -16,7 +16,10 @@ class Queue:
 
     def __iter__(self):
         for noh in self._deque:
-            yield noh.value
+            yield noh
+    
+    # def __contains__(self, item):
+    #     return item in self._items
 
     def enqueue(self, value):
         self._deque.append(value)
@@ -51,6 +54,10 @@ if __name__ == '__main__':
     teste.enqueue(13)
     print(teste)  # Deque(13)
     print(teste.search(0))  # 13
-    print(teste.search(1))  # IndexError Index 1 not found
+    # print(teste.search(1))  # IndexError Index 1 not found
     teste.dequeue()
-    print(teste.search(1))  # IndexError Index 1 not found
+    teste.enqueue(1000)
+    teste.enqueue(1000)
+    print(teste._deque.__contains__(1001)) # False
+    print(teste._deque.__contains__(1000)) # True
+    print(teste._deque.count(1000))
