@@ -7,7 +7,7 @@ def txt_importer(path_file):
             raise ValueError()
         with open(path_file, "r", newline="\n") as txt_file:
             text = txt_file.read()
-            print(text)
+            # print(text)
     except FileNotFoundError:
         print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
         return None

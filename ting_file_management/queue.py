@@ -16,3 +16,6 @@ class Queue:
             raise IndexError()
 
         return self.list[index]
+
+    def convertToList(self):
+        return [self.search(index) for index in range(len(self))]
