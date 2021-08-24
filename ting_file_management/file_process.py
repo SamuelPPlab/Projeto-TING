@@ -15,15 +15,23 @@ def process(path_file, instance):
         "linhas_do_arquivo": arquivo,
     }
     instance.enqueue(dic)
-    sys.stdout.write(f"{dic}\n")
+    sys.stdout.write(f"{dic}")
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) > 0:
+        nome = instance.search(0)["nome_do_arquivo"]
+        instance.dequeue()
+        sys.stdout.write(f"Arquivo {nome} removido com sucesso\n")
+    else:
+        sys.stdout.write("Não há elementos\n")
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if position < len(instance):
+        sys.stdout.write(f"{instance.search(position)}\n")
+    else:
+        sys.stderr.write("Posição inválida\n")
 
 
 if __name__ == "__main__":
