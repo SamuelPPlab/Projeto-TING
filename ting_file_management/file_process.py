@@ -29,3 +29,5 @@ def file_metadata(instance, position):
     """Aqui irá sua implementação"""
     if position > len(instance):
         return sys.stderr.write("Posição inválida\n")
+    process_file = instance.search(position)
+    return sys.stdout.write(f"{process_file}")
