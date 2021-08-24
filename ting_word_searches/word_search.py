@@ -1,5 +1,6 @@
 def exists_word(word, instance):
-    """Aqui irá sua implementação"""
+    return []
+    # Falta implementação
 
 
 def search_by_word(word, instance):
