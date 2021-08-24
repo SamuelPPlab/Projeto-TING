@@ -29,4 +29,26 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    current_file = instance.dequeue()
+
+    lines = current_file.get("linhas_do_arquivo")
+
+    occurrences = []
+
+    for index, line in enumerate(lines):
+        parsed_line = line.lower()
+        parsed_word = word.lower()
+
+        if parsed_word in parsed_line:
+            occurrences.append({"linha": index + 1, "conteudo": line})
+
+    if len(occurrences) == 0:
+        return []
+
+    return [
+        {
+            "palavra": word,
+            "arquivo": current_file.get("nome_do_arquivo"),
+            "ocorrencias": occurrences,
+        }
+    ]
