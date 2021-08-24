@@ -3,19 +3,20 @@ import sys
 
 
 def process(path_file, instance):
-    txt_content = txt_importer(path_file)
-    line_counter = len(txt_content)
+    if len(instance) == 0:
+        txt_content = txt_importer(path_file)
+        line_counter = len(txt_content)
 
-    result = {
-            "nome_do_arquivo": path_file,
-            "qtd_linhas": line_counter,
-            "linhas_do_arquivo": txt_content,
-        }
+        result = {
+                "nome_do_arquivo": path_file,
+                "qtd_linhas": line_counter,
+                "linhas_do_arquivo": txt_content,
+            }
 
-    instance.enqueue(result)
+        instance.enqueue(result)
 
-    # tip from @luise-rios
-    sys.stdout.write(f"{result}")
+        # tip from @luise-rios
+        sys.stdout.write(f"{result}")
 
 
 def remove(instance):
