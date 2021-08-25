@@ -31,4 +31,4 @@ def file_metadata(instance, position):
     try:
         instance.search(position)
     except IndexError:
-        sys.stdout.write("Posição inválida")
+        sys.stderr.write("Posição inválida")
