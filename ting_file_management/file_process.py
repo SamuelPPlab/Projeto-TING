@@ -13,12 +13,22 @@ def process(path_file, instance):
         file_processed['linhas_do_arquivo'] = file
 
         instance.enqueue(file_processed)
-        sys.stdout.write("{file_processed}".format(file_processed=file_processed))
+        sys.stdout.write(
+            "{file_processed}".format(file_processed=file_processed)
+            )
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) <= 0:
+        return sys.stdout.write("Não há elementos\n")
+
+    sys.stdout.write(
+        "Arquivo {nome_arquivo} removido com sucesso\n"
+            .format(nome_arquivo=instance.dequeue()['nome_do_arquivo']))
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        instance.search(position)
+    except IndexError:
+        sys.stdout.write("Posição inválida")

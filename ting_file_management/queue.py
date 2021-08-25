@@ -16,5 +16,6 @@ class Queue:
     def search(self, index):
         # get_element_at
         if index < 0:
-            raise IndexError()
+            raise IndexError
+
         return self.array[index]
