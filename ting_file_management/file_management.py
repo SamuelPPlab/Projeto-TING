@@ -11,4 +11,6 @@ def txt_importer(path_file):
             return text
     except FileNotFoundError:
         # Template Literal
-        return sys.stderr.write('Arquivo {path_file} não encontrado\n'.format(path_file=path_file))
+        return sys.stderr.write(
+            'Arquivo {path_file} não encontrado\n'.format(path_file=path_file)
+            )
