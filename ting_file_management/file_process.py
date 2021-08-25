@@ -27,4 +27,6 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if 0 > position or position > len(instance):
+        return sys.stderr.write("Posição inválida")
+    return  sys.stdout.write(f"{instance.search(position)}")
