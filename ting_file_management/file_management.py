@@ -4,7 +4,7 @@ import os
 
 def txt_importer(path_file):
     if not path_file.endswith('.txt'):
-        return sys.stderr.write('Formato inválido')
+        return sys.stderr.write('Formato inválido\n')
 
     if not os.path.isfile(path_file):
         # https://www.geeksforgeeks.org/python-os-path-isfile-method/
