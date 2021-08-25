@@ -3,18 +3,20 @@ class Queue:
         self.array = list()
 
     def __len__(self):
-        len(self.array)
+        return len(self.array)
 
     def enqueue(self, value):
         # insert_last
-        self.array.insert(value)
+        return self.array.append(value)
 
     def dequeue(self):
         # remove_last
-        self.array = self.array[:1]
+        array_dequeued = self.array
+        del array_dequeued[-1]
+        return array_dequeued
 
     def search(self, index):
         # get_element_at
-        if index < 0 or not index:
+        if index < 0:
             raise IndexError()
-        self.array[index]
+        return self.array[index]
