@@ -11,9 +11,7 @@ class Queue:
 
     def dequeue(self):
         # remove_last
-        array_dequeued = self.array
-        del array_dequeued[-1]
-        return array_dequeued
+        return self.array.pop(0)
 
     def search(self, index):
         # get_element_at
