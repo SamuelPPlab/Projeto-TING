@@ -24,19 +24,17 @@ def sum_of_occurrences(word, index):
 
 def search_by_word(word, instance):
     for i in instance:
-        quantity_found = sum_of_occurrences(word, i)
+        frase = i['linhas_do_arquivo'][0]
+        quantity_found = str(frase).lower().count(word)
         if quantity_found == 0:
             return []
-        for index in i['linhas_do_arquivo'][0]:
-            content = ''
-            content += index
-            return [{
-                'palavra': word,
-                'arquivo': i['nome_do_arquivo'],
-                'ocorrencias': [
-                    {
-                        'linha': sum_of_occurrences(word, index),
-                        "conteudo": content,
-                    }
-                ],
-                }]
+        return [{
+            'palavra': word,
+            'arquivo': i['nome_do_arquivo'],
+            'ocorrencias': [
+                {
+                    'linha': quantity_found,
+                    "conteudo": frase,
+                }
+            ],
+            }]
