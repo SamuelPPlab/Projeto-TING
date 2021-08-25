@@ -7,7 +7,6 @@ def process(path_file, instance):
         file = txt_importer(path_file)
 
         file_processed = dict()
-        teste = len(file)
         file_processed['nome_do_arquivo'] = path_file
         file_processed['qtd_linhas'] = len(file)
         file_processed['linhas_do_arquivo'] = file
@@ -15,7 +14,7 @@ def process(path_file, instance):
         instance.enqueue(file_processed)
         sys.stdout.write(
             "{file_processed}".format(file_processed=file_processed)
-            )
+        )
 
 
 def remove(instance):
@@ -24,7 +23,8 @@ def remove(instance):
 
     sys.stdout.write(
         "Arquivo {nome_arquivo} removido com sucesso\n"
-            .format(nome_arquivo=instance.dequeue()['nome_do_arquivo']))
+        .format(nome_arquivo=instance.dequeue()['nome_do_arquivo'])
+    )
 
 
 def file_metadata(instance, position):
