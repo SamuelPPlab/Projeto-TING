@@ -7,16 +7,18 @@ def process(file_path, instance):
     output = {
         "nome_do_arquivo": file_path,
         "qtd_linhas": len(contents),
-        "linhas_do_arquivo": contents
+        "linhas_do_arquivo": contents,
     }
     sys.stdout.write(f"{output}\n")
     instance.enqueue(output)
+
 
 def remove(instance):
     if len(instance) == 0:
         return sys.stdout.write("Não há elementos\n")
     rm_file = instance.dequeue()["nome_do_arquivo"]
     sys.stdout.write(f"Arquivo {rm_file} removido com sucesso\n")
+
 
 def file_metadata(instance, position):
     try:
