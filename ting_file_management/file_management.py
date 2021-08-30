@@ -1,12 +1,11 @@
 import sys
-import os
 
 
 def txt_importer(path_file):
     extension = path_file.split('.', -1)[-1]
     if extension != 'txt':
         sys.stderr.write("Formato inválido\n")
-        return None
+        return False
     try:
         lines = ''
         with open(path_file, 'r', newline='\n') as file:
