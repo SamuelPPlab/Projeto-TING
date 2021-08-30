@@ -16,7 +16,6 @@ class Queue:
         return value
 
     def search(self, index):
-        print(index)
         if self._data[index] and index >= 0:
             return self._data[index]
         else:
