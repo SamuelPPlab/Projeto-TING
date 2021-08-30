@@ -1,4 +1,5 @@
 from ting_file_management.file_management import txt_importer
+# from ting_file_management.queue import Queue
 
 
 def process(path_file, instance):
@@ -20,7 +21,12 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) == 0:
+        print('Não há elementos')
+        return False
+    print(f'Arquivo {instance.search(1)} removido com sucesso')
+    instance.dequeue()
+    return True
 
 
 def file_metadata(instance, position):
