@@ -22,12 +22,16 @@ class Queue:
         """Aqui irá sua implementação"""
         previous_to_be_removed = self.head_value
 
-        while previous_to_be_removed.next.next:
-            previous_to_be_removed = previous_to_be_removed.next
+        if self.__length > 1:
+            while previous_to_be_removed.next.next:
+                previous_to_be_removed = previous_to_be_removed.next
 
         value_to_be_removed = previous_to_be_removed.next
         previous_to_be_removed.next = None
         self.__length -= 1
+
+        if value_to_be_removed is None:
+            return
         return value_to_be_removed.value
 
     def search(self, index):
