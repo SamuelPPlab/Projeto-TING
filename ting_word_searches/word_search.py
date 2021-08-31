@@ -11,7 +11,7 @@ def get_lines_with_word(lines, word):
 
 
 def exists_word(word, instance):
-    word_search_report = {}
+    word_search_report = []
     for i in range(len(instance)):
         file_report = get_file_report(instance.search(i), instance)
         file_lines = list(txt_importer(file_report["nome_do_arquivo"]))
@@ -19,13 +19,13 @@ def exists_word(word, instance):
 
         if not match:
             return []
-
-        word_search_report = [{
+        word_search_report.append({
             "palavra": word,
             "arquivo": file_report["nome_do_arquivo"],
             "ocorrencias": match
-        }]
-        return word_search_report
+        })
+
+    return word_search_report
 
 
 def search_by_word(word, instance):
