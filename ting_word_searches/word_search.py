@@ -1,7 +1,3 @@
-from ting_file_management.queue import Queue
-from ting_file_management.file_process import process
-
-
 def exists_word(word, instance):
     list_return = list()
     for doc in instance._data:
@@ -44,29 +40,3 @@ def search_by_word(word, instance):
             )
 
     return list_return
-
-
-if __name__ == "__main__":
-    project = Queue()
-    process(
-        "../statics/novo_paradigma_globalizado-min.txt",
-        project,
-    )
-    process(
-        "../statics/nome_pedro.txt",
-        project,
-    )
-    word = search_by_word("sobre", project)
-
-    # [
-    #    {
-    #        "palavra": "sobre",
-    #        "arquivo": "../statics/novo_paradigma_globalizado-min.txt",
-    #        "ocorrencias": [{"linha": 17}, {"linha": 18}],
-    #    },
-    #    {
-    #        "palavra": "sobre",
-    #        "arquivo": "../statics/nome_pedro.txt",
-    #        "ocorrencias": [{"linha": 1}],
-    #    },
-    # ]
