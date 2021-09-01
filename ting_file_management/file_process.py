@@ -1,6 +1,5 @@
 import sys
 from ting_file_management.file_management import txt_importer
-from ting_file_management.queue import Queue
 
 
 def process(path_file, instance):
@@ -8,9 +7,8 @@ def process(path_file, instance):
         if instance.search(i) == path_file:
             print(instance.search(i))
             return False
-    queue = Queue()
-    queue.enqueue(path_file)
     print(get_file_report(path_file, instance))
+    instance.enqueue(path_file)
     return True
 
 
@@ -42,5 +40,4 @@ def get_file_report(path_file, instance):
     file_report['linhas_do_arquivo'] = txt_importer(path_file)
     with open(path_file, 'r', newline='\n') as file:
         file_report["qtd_linhas"] = len(file.readlines())
-    instance.enqueue(path_file)
     return file_report
