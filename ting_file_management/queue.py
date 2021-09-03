@@ -1,5 +1,6 @@
 class Queue:
     first_element = 0
+
     def __init__(self):
         """Inicialize sua estrutura aqui"""
         self.data = []
@@ -10,6 +11,7 @@ class Queue:
     def enqueue(self, value):
         """Aqui irá sua implementação"""
         self.data.append(value)
+
     def dequeue(self):
         """Aqui irá sua implementação"""
         if self.data:
@@ -22,4 +24,3 @@ class Queue:
         if index < 0 or index >= self_indexes:
             raise IndexError
         return self.data[index]
-        
