@@ -12,7 +12,11 @@ def process(path_file, instance):
     instance.enqueue(new_dict)
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) < 1:
+        sys.stdout.write("Não há elementos\n")
+    else:
+        path_file = instance.dequeue()["nome_do_arquivo"]
+        sys.stdout.write(f"Arquivo {path_file} removido com sucesso\n")
 
 
 def file_metadata(instance, position):
