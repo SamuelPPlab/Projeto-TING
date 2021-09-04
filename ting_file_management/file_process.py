@@ -1,6 +1,7 @@
 from ting_file_management.file_management import txt_importer
 import sys
 
+
 def process(path_file, instance):
     content_file = txt_importer(path_file)
     new_dict = {
@@ -10,6 +11,7 @@ def process(path_file, instance):
     }
     sys.stdout.write(str(new_dict))
     instance.enqueue(new_dict)
+
 
 def remove(instance):
     if len(instance) < 1:

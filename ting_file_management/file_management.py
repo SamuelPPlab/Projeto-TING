@@ -10,4 +10,4 @@ def txt_importer(path_file):
         else:
             sys.stderr.write("Formato inválido\n")
     except FileNotFoundError:
-       sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
+        sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
